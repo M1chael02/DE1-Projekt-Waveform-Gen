@@ -1,6 +1,5 @@
 # DE1-Projekt-Waveform-Gen
-Simple waveform generator using Nexys A7 50T dev board in VHDL
-
+Jednoduchý generátor průběhů signálu s využitím vývojové desky Nexys A7-50T ve VHDL
 ## Členové týmu
 - Michael Jurča
 - Denis Kaňovský
