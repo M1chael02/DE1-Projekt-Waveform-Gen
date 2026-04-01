@@ -3,3 +3,5 @@ Jednoduchý generátor průběhů signálu s využitím vývojové desky Nexys A
 ## Členové týmu
 - Michael Jurča
 - Denis Kaňovský
+## Obsah
+-abstrakt
