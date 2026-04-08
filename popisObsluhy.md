@@ -1,3 +1,4 @@
+## Popis obsluhy
 Tvar signálu je vybírá sepnutím přepínače a je indikován první 7-segmentovkou.
 
 Frekvence se zvyšuje pomocí tlačítek vpravo(+)/vlevo(-), řád se mění pomocí tlačítek nahoru/dolů a je ve smyčce (třetí  7-segmentovka až osmá 7-segmentovka).
