@@ -3,6 +3,6 @@ Jednoduchý generátor průběhů signálu s využitím vývojové desky Nexys A
 ## Členové týmu
 - Michael Jurča (M1chael02)
 - Denis Kaňovský (profesorPrymula)
-- Dominik Nádvorník ()
+- Dominik Nádvorník (nadvornikdominik)
 ## Obsah
 - Abstrakt
