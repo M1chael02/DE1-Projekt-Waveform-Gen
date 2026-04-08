@@ -5,11 +5,7 @@ Jednoduchý generátor průběhů signálu s využitím vývojové desky Nexys A
 - Michael Jurča (M1chael02) - sinusový průběh, správa repozitáře, waveSelect
 - Denis Kaňovský (profesorPrymula) - trojúhelníkový průběh, dokumentace
 - Dominik Nádvorník (nadvornikdominik) - obdélníkový průběh, top level design
-=======
-- Michael Jurča (M1chael02) - 
-- Denis Kaňovský (profesorPrymula)
-- Dominik Nádvorník (nadvornikdominik)
->>>>>>> d9f14693014b98d37e2df481ee974643db669256
+
 ## Obsah
 - Abstrakt
 
