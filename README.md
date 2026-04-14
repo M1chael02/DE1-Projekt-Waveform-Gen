@@ -7,6 +7,10 @@ Jednoduchý generátor průběhů signálu s využitím vývojové desky Nexys A
 
 ## Obsah
 - Abstrakt
+- Hardware
+- Software
+- Praktická ukázka
+- Závěr
 
 ## Top level design
 ![Image of top level design](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/top_level.jpg)
