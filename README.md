@@ -41,3 +41,14 @@ Středové tlačítko je reset.
 | `triangle_gen` | Podobně jako `sawtootGen` dává na výstup hodnotu pily v dané pozici fázového akumulátoru |
 
 ## Simulace
+
+### `phase_accumulator` 
+
+![Image of simulation of phase_accumulator](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/sawtooth_top/phase_accumulator_1.png)
+
+Modul přičítá každým taktem hodnotu vstupu na výstup. Tím se zajišťuje fázový posuv.
+
+- Vstupem je 32-bit `phase_step`
+- Výstupem je 32-bit `phase_out`
+Je vidět že se každým taktem výstup zvětšuje o vstupní hodnotu
+---
