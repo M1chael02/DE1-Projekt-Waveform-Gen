@@ -35,9 +35,9 @@ Středové tlačítko je reset.
 | `pwm_gen` | Na vstupu modulu je vektor `duty_in`, který se používá ke generaci střídy |
 | `sawtoothGen` | Podle pozice fázového akumulátoru (32-bit vektor) dá na výstup hodnotu pily v dané pozici |
 | `sawtoot_top` | Top level pro generátor pily |
-| `shifGen` | Z 20-bit čísla znázorňujícího frekvenci přepočítává na použitelnějí `phaseShift` |
+| `shiftGen` | Z 20-bit čísla znázorňujícího frekvenci přepočítává na použitelnějí `phaseShift` |
 | `sigma_Delta` | Sigma-Delta převodník pro pilový průběh |
-| `top_triangle` | Top level generátoru trojúhelníkového průběhu |
+| `triangle_top` | Top level generátoru trojúhelníkového průběhu |
 | `triangle_gen` | Podobně jako `sawtootGen` dává na výstup hodnotu pily v dané pozici fázového akumulátoru |
 
 ## Simulace
@@ -50,5 +50,48 @@ Modul přičítá každým taktem hodnotu vstupu na výstup. Tím se zajišťuje
 
 - Vstupem je 32-bit `phase_step`
 - Výstupem je 32-bit `phase_out`
+
 Je vidět že se každým taktem výstup zvětšuje o vstupní hodnotu
+---
+
+### `pwm_gen`
+
+![Image of simulation of pwm_gen]()
+
+Podle vstupní úrovně dává modul na výstup obdélníkový průběh s danou střídou znázorňující požadovanou hodnotu
+
+- Vstupem je 7-bit `duty_in`
+- Výstupem je 1-bit obdélník se střídou
+
+---
+
+### `sawtoothGen`
+
+![Image of simulation of pwm_gen]()
+
+Modul přepočítává vstupní 32-bit hodnotu fáze na 8-bit hodnotu pily. Spodních 24 bitů je pro 8-bitovou hloubku výstupu zbytečných, tudíž se mohou vyhodit.
+
+- Horní signál `phase` je současnou hodnotou fáze
+- Spodní signál `sawtooth` je zobrazen analogově a ukazuje pilový průběh
+
+---
+
+### `sawtoot_top`
+
+---
+
+### `shifGen`
+
+---
+
+### `sigma_Delta`
+
+---
+
+### `triangle_top`
+
+---
+
+### `triangle_gen`
+
 ---
