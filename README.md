@@ -56,7 +56,7 @@ Je vidět že se každým taktem výstup zvětšuje o vstupní hodnotu
 
 ### `pwm_gen`
 
-![Image of simulation of pwm_gen]()
+![Image of simulation of pwm_gen](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/triangle_top/tb_pwm_gener.png)
 
 Podle vstupní úrovně dává modul na výstup obdélníkový průběh s danou střídou znázorňující požadovanou hodnotu
 
@@ -67,7 +67,7 @@ Podle vstupní úrovně dává modul na výstup obdélníkový průběh s danou 
 
 ### `sawtoothGen`
 
-![Image of simulation of pwm_gen]()
+![Image of simulation of sawtoothGen](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/sawtooth_top/sawtoothGen_1.png)
 
 Modul přepočítává vstupní 32-bit hodnotu fáze na 8-bit hodnotu pily. Spodních 24 bitů je pro 8-bitovou hloubku výstupu zbytečných, tudíž se mohou vyhodit.
 
@@ -78,20 +78,30 @@ Modul přepočítává vstupní 32-bit hodnotu fáze na 8-bit hodnotu pily. Spod
 
 ### `sawtoot_top`
 
+![Image of simulation of sawtoot_top](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/sawtooth_top/sawtooth_top_1.png)
+
 ---
 
 ### `shifGen`
+
+![Image of simulation of shifGen](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/shiftGen_tb.png)
 
 ---
 
 ### `sigma_Delta`
 
+![Image of simulation of sigma_Delta](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/sawtooth_top/sigma_delta_1.png)
+
 ---
 
 ### `triangle_top`
 
+![Image of simulation of triangle_top](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/triangle_top/tb_top_triangle.png)
+
 ---
 
 ### `triangle_gen`
+
+![Image of simulation of triangle_gen](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/triangle_top/tb_triangle_gen_1.png)
 
 ---
