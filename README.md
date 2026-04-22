@@ -52,6 +52,7 @@ Modul přičítá každým taktem hodnotu vstupu na výstup. Tím se zajišťuje
 - Výstupem je 32-bit `phase_out`
 
 Je vidět že se každým taktem výstup zvětšuje o vstupní hodnotu
+
 ---
 
 ### `pwm_gen`
@@ -76,15 +77,21 @@ Modul přepočítává vstupní 32-bit hodnotu fáze na 8-bit hodnotu pily. Spod
 
 ---
 
-### `sawtoot_top`
+### `sawtooth_top`
 
 ![Image of simulation of sawtoot_top](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/sawtooth_top/sawtooth_top_1.png)
 
+Jedná se o top level generátoru pilového průběhu. Vstupem jsou clk, rst a phase_Shift, výstupem pak obdélníkový průběh se střídou, jejíž průměrná hodnota znázorňuje pilový průběh
+
+- V simulaci jde vidět vstupní fázový posun a na výstupu pak výstupní signál sigma-delta převodníku
+
 ---
 
-### `shifGen`
+### `shiftGen`
 
-![Image of simulation of shifGen](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/shiftGen_tb.png)
+![Image of simulation of shiftGen](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/shiftGen_tb.png)
+
+Tento modul přepočítává vstupní frekvenci na 
 
 ---
 
