@@ -5,6 +5,7 @@ entity display_controller is
     Port(   
         clk         : in  STD_LOGIC;
         rst         : in  STD_LOGIC;
+        change      : in  STD_LOGIC;
         freq_in     : in  STD_LOGIC_VECTOR(19 downto 0);
         mag         : in  STD_LOGIC_VECTOR(5 downto 0);
         seg         : out STD_LOGIC_VECTOR(6 downto 0);
@@ -39,7 +40,8 @@ architecture Behavioral of display_controller is
     generic ( G_MAX : positive);
     Port ( clk : in STD_LOGIC;
            rst : in STD_LOGIC;
-           ce : out STD_LOGIC);
+           dis : in STD_LOGIC;
+           ce  : out STD_LOGIC);
     end component counter_blink;
     
     -- Component declaration for binary translator to 7 segment display
@@ -93,7 +95,8 @@ begin
     port map ( 
            clk => clk,
            rst => rst,
-           ce => sig_blink
+           dis => change,
+           ce  => sig_blink
         );
     
     -- Translator   
