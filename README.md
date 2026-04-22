@@ -1,15 +1,15 @@
 # DE1-Projekt-Waveform-Gen
 Jednoduchý generátor průběhů signálu s využitím vývojové desky Nexys A7-50T ve VHDL
 ## Členové týmu
-- Michael Jurča (M1chael02) - sinusový průběh, správa repozitáře
+- Michael Jurča (M1chael02) - pilový průběh, správa repozitáře
 - Denis Kaňovský (profesorPrymula) - trojúhelníkový průběh, dokumentace
 - Dominik Nádvorník (nadvornikdominik) - obdélníkový průběh, top level design
 
 ## Obsah
-- Abstrakt
-- Hardware
-- Software
-- Praktická ukázka
+- Základní popis fungování
+- Top level design
+- Moduly
+- Simulace
 - Závěr
 
 ## Základní popis fungování
@@ -27,3 +27,16 @@ Středové tlačítko je reset.
 
 ## Top level design
 ![Image of top level design](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/top_level.jpg)
+
+## Moduly
+|Název modulu|Popis funkce|
+|`phase_accumulator`| Posouvá pozici fázového akumulátoru o vstupní vektor fázového posunu |
+|`pwm_gen`| Na vstupu modulu je vektor `duty_in`, který se používá ke generaci střídy|
+|`sawtoothGen`|Podle pozice fázového akumulátoru (32-bit vektor) dá na výstup hodnotu pily v dané pozici|
+|`sawtoot_top`|Top level pro generátor pily|
+|`shifGen`|Z 20-bit čísla znázorňujícího frekvenci přepočítává na použitelnějí `phaseShift`|
+|`sigma_Delta`|Sigma-Delta převodník pro pilový průběh|
+|`top_triangle`|Top level generátoru trojúhelníkového průběhu|
+|`triangle_gen`|Podobně jako `sawtootGen` dává na výstup hodnotu pily v dané pozici fázového akumulátoru|
+
+## Simulace
