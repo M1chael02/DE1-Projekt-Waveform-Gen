@@ -5,7 +5,8 @@ entity counter_blink is
     generic ( G_MAX : positive := 5 );  -- Default number of clock cycles
     Port ( clk : in STD_LOGIC;
            rst : in STD_LOGIC;
-           ce : out STD_LOGIC);
+           dis : in STD_LOGIC;
+           ce  : out STD_LOGIC);
 end counter_blink;
 
 architecture Behavioral of counter_blink is
@@ -22,17 +23,21 @@ begin
                 ce      <= '0';   -- Reset output
                 sig_cnt <= 0;     -- Reset internal counter
 
+            elsif dis = '1' then
+                ce      <= '0';
+                sig_cnt <= 0'
+
             elsif sig_cnt = G_MAX-1 then
-                ce <= '1';
+                ce      <= '1';
                 sig_cnt <= 0;
             elsif sig_cnt > G_MAX/2 then
-                ce <= '1';
+                ce      <= '1';
                 sig_cnt <= sig_cnt + 1;
             elsif sig_cnt < G_MAX/2 then
-                ce <= '0';
+                ce      <= '0';
                 sig_cnt <= sig_cnt + 1;
             else
-                ce <= '0';
+                ce      <= '0';
                 sig_cnt <= sig_cnt + 1;
 
             end if;  -- End if for reset/check
