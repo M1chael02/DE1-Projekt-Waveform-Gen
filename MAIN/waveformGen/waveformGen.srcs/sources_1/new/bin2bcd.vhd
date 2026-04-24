@@ -6,7 +6,7 @@ entity bin2bcd is
     Port (
         clk       : in  std_logic;
         rst       : in  std_logic;
-        binary_in : in  std_logic_vector(16 downto 0);
+        binary_in : in  std_logic_vector(19 downto 0);
         bcd_out   : out std_logic_vector(23 downto 0)
     );
 end bin2bcd;
