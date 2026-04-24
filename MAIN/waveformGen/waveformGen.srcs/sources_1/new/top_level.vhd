@@ -10,7 +10,7 @@ entity top_level is
            btnr : in  STD_LOGIC;
            sw   : in  STD_LOGIC_VECTOR (0 downto 0);
            led  : out STD_LOGIC_VECTOR (3 downto 0);
-           ja   : out STD_LOGIC_VECTOR (2 downto 0);
+           ja   : out STD_LOGIC_VECTOR (3 downto 1);
            seg  : out STD_LOGIC_VECTOR (6 downto 0);
            an   : out STD_LOGIC_VECTOR (7 downto 0);
            dp   : out STD_LOGIC);
@@ -32,7 +32,7 @@ architecture Behavioral of top_level is
         clk         : in  STD_LOGIC;
         rst         : in  STD_LOGIC;
         phase_step  : in  STD_LOGIC_VECTOR(31 downto 0);
-        ramp_out    : out STD_LOGIC);
+        pwm_out    : out STD_LOGIC);
     end component;
     
     component sawtooth_top is
@@ -68,7 +68,7 @@ architecture Behavioral of top_level is
         rst         : in STD_LOGIC;
         update_tick : in STD_LOGIC;
         freqIn      : in STD_LOGIC_VECTOR(19 downto 0);
-        phaseShift  : out STD_LOGIC_VECTOR);
+        phaseShift  : out STD_LOGIC_VECTOR(31 downto 0));
     end component;
 
     component freq_select is
@@ -137,15 +137,15 @@ begin
     port map(
         clk         => clk,
         rst         => btnc,
-        phase_step  => sig_freq_c,
-        ramp_out    => ja(1)
+        phase_step  => sig_phase_shift,
+        pwm_out    => ja(1)
     );
     
     saw_0 : sawtooth_top
     port map(
         clk             => clk,
         rst             => btnc,
-        phase_shift     => sig_freq_c,
+        phase_shift     => sig_phase_shift,
         output_Saw      => ja(2)
     );
     
@@ -155,7 +155,7 @@ begin
         rst         => btnc,
         en          => sig_update,
         freq        => sig_freq_c,
-        square_out  => ja(0)
+        square_out  => ja(3)
     );
     
     display_0 : display_controller
