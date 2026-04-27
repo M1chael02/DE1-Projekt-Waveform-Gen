@@ -157,13 +157,17 @@ Jedná se o top level generátoru pilového průběhu. Vstupem jsou clk, rst a p
 
 ![Image of simulation of shiftGen](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/shiftGen_tb.png)
 
-Tento modul přepočítává vstupní frekvenci na 
+Tento modul úderem každé log. úrovně H vstupu `update_tick` přepočítává vstupní frekvenci (`freq_in`) v Hz na 32-bit fázový posun pro výstup `phaseShift`
 
 ---
 
 ### `sigma_Delta`
 
 ![Image of simulation of sigma_Delta](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/sawtooth_top/sigma_delta_1.png)
+
+Tento modul využívá koncepce sigma-delta převodníku pro konverzi 8-bit digitálního signálu `data_in` na 1-bit výstupní signál `dac_out`, který má ale vyšší frekvenci. "Analogová" hodnota je pak vyjádřena v průměrné hodnotě signálu s pomocí PDM (Pulse Density Modulation)
+
+- V simulaci můžeme pozorovat že se nám mění hustota pulzů na výstupu se změnou vstupní hodnoty
 
 ---
 
