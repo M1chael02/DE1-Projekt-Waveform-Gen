@@ -26,20 +26,20 @@ Frekvence výstupního signálu se volí pomocí tlačítek vpravo(+) a vlevo(-)
 Středové tlačítko je reset.
 
 ## I/O sekce
-| Port | Vstup/výstup? | Popis funkce |
-|---|---|---|
-| clk | Vstup |Hlavní hodinový signál desky |
-| btnc | Vstup |reset |
-| sw0 | Vstup | Přepínač pro volbu výstupního kmitočtu|
-| btnl | Vstup | Snížení kmitočtu ve zvoleném řádu |
-| btnr | Vstup | Zvýšení kmitočtu ve zvoleném řádu |
-| btnu | Vstup | Zvýšení měněného řádu |
-| btnd | Vstup | Snížení měněného řádu |
-| ja(1) | Výstup | Výstupní signál trojúhelníku |
-| ja(2) | Výstup | Výstupní signál obdélníku |
-| ja(3) | Výstup | Výstupní signál pily|
-| seg | Výstup | Active-low výstup pro segmentovku (katoda) |
-| an | Výstup | Active-lov výstup pro anody segmenovek |
+| Port | Vstup/výstup | Popis funkce |
+|:---:|:---:|:---:|
+| `clk` | Vstup |Hlavní hodinový signál desky |
+| `btnc` | Vstup |reset |
+| `sw0` | Vstup | Přepínač pro volbu výstupního kmitočtu|
+| `btnl` | Vstup | Snížení kmitočtu ve zvoleném řádu |
+| `btnr` | Vstup | Zvýšení kmitočtu ve zvoleném řádu |
+| `btnu` | Vstup | Zvýšení měněného řádu |
+| `btnd` | Vstup | Snížení měněného řádu |
+| `ja(1)` | Výstup | Výstupní signál trojúhelníku |
+| `ja(2)` | Výstup | Výstupní signál obdélníku |
+| `ja(3)` | Výstup | Výstupní signál pily|
+| `seg` | Výstup | Active-low výstup pro segmentovku (katoda) |
+| `an` | Výstup | Active-lov výstup pro anody segmenovek |
 
 ## Top level design
 ![Image of top level design](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/top_level.jpg)
