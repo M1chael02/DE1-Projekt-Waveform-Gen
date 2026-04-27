@@ -88,6 +88,12 @@ Středové tlačítko je reset.
 | `sawtoothGen` | Podle pozice fázového akumulátoru (32-bit vektor) dá na výstup hodnotu pily v dané pozici |
 | `sigma_Delta` | Sigma-Delta převodník pro pilový průběh |
 
+### Display driver
+| Název modulu | Popis funkce |
+|:-----:|-----|
+| `display_driver` | Lorem ipsum dolor sit amet |
+| `add_submodules_here` | Lorem ipsum dolor sit amet |
+
 <!-- | Název modulu | Popis funkce |
 |:-----:|-----|
 | `phase_accumulator` | Posouvá pozici fázového akumulátoru o vstupní vektor fázového posunu |
