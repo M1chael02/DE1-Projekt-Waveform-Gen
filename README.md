@@ -55,6 +55,7 @@ Středové tlačítko je reset.
 | Název modulu | Popis funkce |
 |:-----:|-----|
 | `Debounce` | Zajišťuje debouncing vstupních tlačítek |
+| `add_submodules_here` | Lorem ipsum dolor sit amet |
 
 ### Freq to phaseShift
 | Název modulu | Popis funkce |
