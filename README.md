@@ -45,16 +45,59 @@ Středové tlačítko je reset.
 ![Image of top level design](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/top_level.jpg)
 
 ## Moduly
+
+### Top level
 | Název modulu | Popis funkce |
-|-----|-----|
+|:-----:|-----|
+| `top_level` | Hlavní modul obstarávající spojení mezi zbytkem sub-modulů |
+
+### Debounce
+| Název modulu | Popis funkce |
+|:-----:|-----|
+| `Debounce` | Zajišťuje debouncing vstupních tlačítek |
+
+### Freq to phaseShift
+| Název modulu | Popis funkce |
+|:-----:|-----|
+| `freq_to_phaseShift` | Z 20-bit čísla znázorňujícího frekvenci přepočítává na použitelnějí `phaseShift` |
+
+### Freq select
+| Název modulu | Popis funkce |
+|:-----:|-----|
+| `freq_select` | Lorem ipsum dolor sit amet |
+| `add_submodules_here` | Lorem ipsum dolor sit amet |
+
+### Triangle top
+| Název modulu | Popis funkce |
+|:-----:|-----|
+| `triangle_top` | Z příchozího fázového posuvu generuje na výstupu trojúhelníkový signál |
 | `phase_accumulator` | Posouvá pozici fázového akumulátoru o vstupní vektor fázového posunu |
-| `pwm_gen` | Na vstupu modulu je vektor `duty_in`, který se používá ke generaci střídy |
+| `triangle_gen` | Podle pozice fázového akumulátoru (32-bit vektor) dá na výstup hodnotu trojúhelníku v dané pozici fázového akumulátoru |
+| `pwm_gen` | Na vstupu modulu je vektor `duty_in`, který se používá ke generaci střídy na výstupu |
+
+### Square top
+| Název modulu | Popis funkce |
+|:-----:|-----|
+| `square_top` | Lorem ipsum dolor sit amet |
+| `add_submodules_here` | Lorem ipsum dolor sit amet |
+
+### Sawtooth top
+| Název modulu | Popis funkce |
+|:-----:|-----|
+| `sawtoot_top` | Top level pro generátor pily, funkčnost podobná s `triangle_top` |
+| `sawtoothGen` | Podle pozice fázového akumulátoru (32-bit vektor) dá na výstup hodnotu pily v dané pozici |
+| `sigma_Delta` | Sigma-Delta převodník pro pilový průběh |
+
+<!-- | Název modulu | Popis funkce |
+|:-----:|-----|
+| `phase_accumulator` | Posouvá pozici fázového akumulátoru o vstupní vektor fázového posunu |
+| `pwm_gen` | Na vstupu modulu je vektor `duty_in`, který se používá ke generaci střídy na výstupu |
 | `sawtoothGen` | Podle pozice fázového akumulátoru (32-bit vektor) dá na výstup hodnotu pily v dané pozici |
 | `sawtoot_top` | Top level pro generátor pily |
 | `shiftGen` | Z 20-bit čísla znázorňujícího frekvenci přepočítává na použitelnějí `phaseShift` |
 | `sigma_Delta` | Sigma-Delta převodník pro pilový průběh |
 | `triangle_top` | Top level generátoru trojúhelníkového průběhu |
-| `triangle_gen` | Podobně jako `sawtootGen` dává na výstup hodnotu pily v dané pozici fázového akumulátoru |
+| `triangle_gen` | Podobně jako `sawtootGen` dává na výstup hodnotu pily v dané pozici fázového akumulátoru | -->
 
 ## Simulace
 
