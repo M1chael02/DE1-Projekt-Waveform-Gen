@@ -186,4 +186,5 @@ Jedná se o top level generátoru trojúhelníkového průběhu. Vstupem jsou cl
 ![Image of simulation of triangle_gen](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/triangle_top/tb_triangle_gen_1.png)
 
 Modul generuje na výstupu `triangle` 8-bit číslo znázorňující amplitudu trojúhelníkového signálu v závislosti na poloze 32-bit čísla `phase`znázorňující fázi v daném časovém úseku
+
 ---
