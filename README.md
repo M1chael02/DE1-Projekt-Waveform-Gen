@@ -27,7 +27,7 @@ Středové tlačítko je reset.
 
 ## I/O sekce
 | Port | Vstup/výstup | Popis funkce |
-|:---:|:---:|:---:|
+|:---:|:---:|:---|
 | `clk` | Vstup |Hlavní hodinový signál desky |
 | `btnc` | Vstup |reset |
 | `sw0` | Vstup | Přepínač pro volbu výstupního kmitočtu|
