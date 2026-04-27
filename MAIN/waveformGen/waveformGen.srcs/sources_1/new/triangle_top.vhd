@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 -- Top-level module connecting DDS, triangle generator, and PWM
-entity top_triangle is
+entity triangle_top is
     port (
         clk        : in std_logic; -- System clock
         rst        : in std_logic; -- Active-high reset
@@ -11,7 +11,7 @@ entity top_triangle is
     );
 end entity;
 
-architecture rtl of top_triangle is
+architecture rtl of triangle_top is
 
     signal phase    : std_logic_vector(31 downto 0); -- Phase accumulator output
     signal triangle : std_logic_vector(7 downto 0);  -- Triangle waveform (used as PWM duty cycle)
