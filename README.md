@@ -1,9 +1,9 @@
 # DE1-Projekt-Waveform-Gen
 Jednoduchý generátor průběhů signálu s využitím vývojové desky Nexys A7-50T ve VHDL
 ## Členové týmu
-- Michael Jurča (M1chael02) - pilový průběh, správa repozitáře
-- Denis Kaňovský (profesorPrymula) - trojúhelníkový průběh, dokumentace
-- Dominik Nádvorník (nadvornikdominik) - obdélníkový průběh, top level design
+- Michael Jurča ([M1chael02](https://github.com/M1chael02)) - pilový průběh, správa repozitáře
+- Denis Kaňovský ([profesorPrymula](https://github.com/profesorPrymula)) - trojúhelníkový průběh, dokumentace
+- Dominik Nádvorník ([nadvornikdominik](https://github.com/nadvornikdominik)) - obdélníkový průběh, top level design
 
 ## Obsah
 - [Základní popis fungování](#Základní-popis-fungování)
