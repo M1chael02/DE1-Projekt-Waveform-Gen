@@ -18,25 +18,30 @@ end freq_select;
 
 architecture Behavioral of freq_select is
 
+    -- Signals for input and output frequency and magnitude
     signal sig_mag  : unsigned(2 downto 0)  := "000";
     signal sig_mag_d: STD_LOGIC_VECTOR(5 downto 0);
-    signal sig_freq : unsigned(19 downto 0) := (others => '0');
-    signal sig_freq_cmp : unsigned(19 downto 0) := (others => '0');
+    signal sig_freq : unsigned(19 downto 0) := to_unsigned(1, 20);
+    signal sig_freq_cmp : unsigned(19 downto 0) := to_unsigned(1, 20);
 
+    -- Signals to determine end of changing frequency
     signal prev_change  : STD_LOGIC := '0';
     signal tick_reg     : STD_LOGIC := '0';
-    
+
+    -- Maximal frequency set to 100kHz
     constant MAX_FREQ : unsigned(19 downto 0) := to_unsigned(100000, 20);
 
 begin
 
     process(clk, rst)
-    
+
+    -- Variable that will be added or subtracted to frequency
+    -- Changes with magnitude
     variable step_val : unsigned(19 downto 0);
     
     begin
         tick_reg <= '0';
-        
+
         if rst = '1' then
             sig_mag      <= (others => '0');
             sig_freq     <= to_unsigned(1,20);
@@ -45,14 +50,17 @@ begin
             tick_reg     <= '0';
 
         elsif rising_edge(clk) then
+            -- Is active only when we want to change frequency
             if freq_change = '1' then
 
+                -- Changes magnitude based on button presses
                 if mag_up = '1' and sig_mag < "110" then
                     sig_mag <= sig_mag + 1;
                 elsif mag_down = '1' and sig_mag > "001" then
                     sig_mag <= sig_mag - 1;
                 end if;
                 
+                -- Changes step value based on current magnitude
                 case sig_mag is
                     when "001"  => step_val := to_unsigned(1, 20);
                     when "010"  => step_val := to_unsigned(10, 20);
@@ -62,7 +70,8 @@ begin
                     when "110"  => step_val := to_unsigned(100000, 20);
                     when others => step_val := to_unsigned(0, 20);
                 end case;
-                
+
+                -- Converts binary magnitude to special values for easier work with display
                 case freq_change is
                     when '0' => 
                         sig_mag_d <= "000000";
@@ -79,7 +88,8 @@ begin
                         end case;
                     when others => sig_mag_d <= "000000";
                 end case;
-                
+
+                -- Changes frequency based on button preses and magnitude of change
                 if freq_up = '1' then
                     if sig_freq + step_val <= MAX_FREQ then
                         sig_freq <= sig_freq + step_val;
@@ -96,7 +106,8 @@ begin
 
                 end if;             
             end if;
-            
+
+            -- updates sig_freq_cmp when changing is done
             if prev_change = '1' and freq_change = '0' then
                 sig_freq_cmp <= sig_freq;
                 tick_reg <= '1';
@@ -106,6 +117,7 @@ begin
         end if;
     end process;
 
+    -- Continuous asigning of signals to outputs for display
     freq        <= std_logic_vector(sig_freq);
     freq_comp   <= std_logic_vector(sig_freq_cmp);
     mag         <= std_logic_vector(sig_mag_d);
