@@ -146,7 +146,7 @@ begin
         clk             => clk,
         rst             => btnc,
         phase_shift     => sig_phase_shift,
-        output_Saw      => ja(2)
+        output_Saw      => ja(3)
     );
     
     square_0 : square_top
@@ -155,7 +155,7 @@ begin
         rst         => btnc,
         en          => sig_update,
         freq        => sig_freq_c,
-        square_out  => ja(3)
+        square_out  => ja(2)
     );
     
     display_0 : display_controller
