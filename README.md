@@ -192,4 +192,34 @@ Modul generuje na výstupu `triangle` 8-bit číslo znázorňující amplitudu t
 ---
 
 ### `square_top`
-![image of simulation of square_top]()
+![image of simulation of square_top](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/square_top/square_top_tb.png)
+
+Modul při `en` 1 vezme frekvenci a přepočítá frekvenci na počet clocků, poté funguje jako `counter` a v polovině maxima překlopí výstupní signál
+
+- V simulaci můžeme pozorovat jak se změní šířka impulzů až poté co se na `en` objeví 1, i přes to že frekvence se změnila už dříve
+
+---
+
+### `counter_bin`
+![image of simulation of counter_bin](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/display_controller/counter_bin_tb.png)
+
+Při každé náběžné hraně `clock`, pokud je `en` 1, zvýší svoji binární hodnotu o 1 
+
+- V simulaci jde vidět jak čítač dosáhne maximální hodnoty, poté se vynuluje a začne čítat znovu
+
+---
+### `counter_blink`
+![image of simulation of counter_blink](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/display_controller/counter_blink_tb.png)
+
+Tvoří obdelníkové pulzy s pevně danou periodou
+
+---
+### `display_controller`
+![image of simulation of display_controller](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/display_controller/display_controller_tb.png)
+
+Modul, který zpracovává veškerá data zobrazovaná na displeji
+
+- V simulaci můžeme vidět jak se postupně mění aktivní anoda a v případě nepoužívaných anod jsou všechny anody nastaveny na 1
+- Dále jde vidět jak se na výstup `seg` postupně přiřazují jednotlivé číslice vstupní frekvence
+
+---
