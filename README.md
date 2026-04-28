@@ -60,7 +60,7 @@ Středové tlačítko je reset.
 ### Freq to phaseShift
 | Název modulu | Popis funkce | Odkaz na výsledky testů |
 |:-----:|-----| :---: |
-| `freq_to_phaseShift` | Z 20-bit čísla znázorňujícího frekvenci přepočítává na použitelnějí `phaseShift` | [Testy](###freq_to_phaseShift) |
+| `freq_to_phaseShift` | Z 20-bit čísla znázorňujícího frekvenci přepočítává na použitelnějí `phaseShift` | [Testy](#freq_to_phaseShift) |
 
 ### Freq select
 | Název modulu | Popis funkce |
