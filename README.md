@@ -6,11 +6,11 @@ Jednoduchý generátor průběhů signálu s využitím vývojové desky Nexys A
 - Dominik Nádvorník (nadvornikdominik) - obdélníkový průběh, top level design
 
 ## Obsah
-- Základní popis fungování
-- Top level design
-- Moduly
-- Simulace
-- Závěr
+- [Základní popis fungování](#Základní-popis-fungování)
+- [Top level design](#Top-level-design)
+- [Moduly](#Moduly)
+- [Simulace](#Simulace)
+- [Závěr](#Závěr)
 
 ## Základní popis fungování
 Funkční generátor je druh generátoru, který umí na výstupu generovat různé tvary signálů. Náš projekt se bude zabývat třemi průběhy, a to obdélníkovým, trojúhelníkovým a harmonickým.
@@ -246,3 +246,5 @@ Tvoří obdelníkové pulzy s pevně danou periodou
 
 ---
 
+
+## Závěr
