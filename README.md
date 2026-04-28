@@ -47,9 +47,9 @@ Středové tlačítko je reset.
 ## Moduly
 
 ### Top level
-| Název modulu | Popis funkce | Odkaz na výsledky testů |
-|:-----:|-----| :---: |
-| `top_level` | Hlavní modul obstarávající spojení mezi zbytkem sub-modulů | [Testy](###freq_to_phaseShift) |
+| Název modulu | Popis funkce |
+|:-----:|-----|
+| `top_level` | Hlavní modul obstarávající spojení mezi zbytkem sub-modulů |
 
 ### Debounce
 | Název modulu | Popis funkce |
@@ -58,9 +58,9 @@ Středové tlačítko je reset.
 | `clock_enable` | Vysílá pulzy po určitém počtu clocků |
 
 ### Freq to phaseShift
-| Název modulu | Popis funkce |
-|:-----:|-----|
-| `freq_to_phaseShift` | Z 20-bit čísla znázorňujícího frekvenci přepočítává na použitelnějí `phaseShift` |
+| Název modulu | Popis funkce | Odkaz na výsledky testů |
+|:-----:|-----| :---: |
+| `freq_to_phaseShift` | Z 20-bit čísla znázorňujícího frekvenci přepočítává na použitelnějí `phaseShift` | [Testy](###freq_to_phaseShift) |
 
 ### Freq select
 | Název modulu | Popis funkce |
