@@ -55,7 +55,7 @@ Středové tlačítko je reset.
 | Název modulu | Popis funkce |
 |:-----:|-----|
 | `Debounce` | Zajišťuje debouncing vstupních tlačítek |
-| `add_submodules_here` | Lorem ipsum dolor sit amet |
+| `clock_enable` | Vysíla pulzy po určitém počtu clocků |
 
 ### Freq to phaseShift
 | Název modulu | Popis funkce |
@@ -65,8 +65,7 @@ Středové tlačítko je reset.
 ### Freq select
 | Název modulu | Popis funkce |
 |:-----:|-----|
-| `freq_select` | Lorem ipsum dolor sit amet |
-| `add_submodules_here` | Lorem ipsum dolor sit amet |
+| `freq_select` | Pomocí vstupních tlačítek zařizuje změnu frekvence, posílá ji generátorům a displeji |
 
 ### Triangle top
 | Název modulu | Popis funkce |
@@ -79,8 +78,7 @@ Středové tlačítko je reset.
 ### Square top
 | Název modulu | Popis funkce |
 |:-----:|-----|
-| `square_top` | Lorem ipsum dolor sit amet |
-| `add_submodules_here` | Lorem ipsum dolor sit amet |
+| `square_top` | Funguje jako counter který si ze vstupní frekvence a frekvence desky spočítá maximalní počet clocků a v polovině maxima změní hodnotu výstupu |
 
 ### Sawtooth top
 | Název modulu | Popis funkce |
@@ -89,11 +87,15 @@ Středové tlačítko je reset.
 | `sawtoothGen` | Podle pozice fázového akumulátoru (32-bit vektor) dá na výstup hodnotu pily v dané pozici |
 | `sigma_Delta` | Sigma-Delta převodník pro pilový průběh |
 
-### Display driver
+### Display controller
 | Název modulu | Popis funkce |
 |:-----:|-----|
-| `display_driver` | Lorem ipsum dolor sit amet |
-| `add_submodules_here` | Lorem ipsum dolor sit amet |
+| `display_controller` | Zařizuje funkci displeje |
+| `clock_enable` | Zařizuje obnovovací frekvenci displeje |
+| `counter_bin` | Čítaním zvyšuje binární číslo, kterým vybírá aktivní anodu |
+| `counter_blink` | Zařizuje blikání měněné číslice při změně frekvence |
+| `biněbcd` | Přepočítává binární číslo na BCD kód |
+| `biněseg` | Zobrazuje jednu binární číslici na 7-segmentovém displeji |
 
 <!-- | Název modulu | Popis funkce |
 |:-----:|-----|
@@ -188,3 +190,6 @@ Jedná se o top level generátoru trojúhelníkového průběhu. Vstupem jsou cl
 Modul generuje na výstupu `triangle` 8-bit číslo znázorňující amplitudu trojúhelníkového signálu v závislosti na poloze 32-bit čísla `phase`znázorňující fázi v daném časovém úseku
 
 ---
+
+### `square_top`
+![image of simulation of square_top]()
