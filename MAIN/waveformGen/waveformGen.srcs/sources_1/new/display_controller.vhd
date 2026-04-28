@@ -89,7 +89,8 @@ begin
             en  => sig_en,
             cnt => sig_digit
         );
-        
+
+    -- Counter for blinks    
     counter_1 : counter_blink
     generic map ( G_MAX => 50000000)
     port map ( 
