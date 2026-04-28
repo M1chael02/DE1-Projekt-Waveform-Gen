@@ -8,6 +8,7 @@ Jednoduchý generátor průběhů signálu s využitím vývojové desky Nexys A
 ## Obsah
 - [Základní popis fungování](#Základní-popis-fungování)
 - [Top level design](#Top-level-design)
+- [I/O sekce](#I/O-sekce)
 - [Moduly](#Moduly)
 - [Simulace](#Simulace)
 - [Závěr](#Závěr)
