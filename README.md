@@ -49,7 +49,7 @@ Středové tlačítko je reset.
 ### Top level
 | Název modulu | Popis funkce | Odkaz na výsledky testů |
 |:-----:|-----| :---: |
-| `top_level` | Hlavní modul obstarávající spojení mezi zbytkem sub-modulů | [Testy](###`freq_to_phaseShift`) |
+| `top_level` | Hlavní modul obstarávající spojení mezi zbytkem sub-modulů | [Testy](###freq_to_phaseShift) |
 
 ### Debounce
 | Název modulu | Popis funkce |
@@ -115,7 +115,7 @@ Středové tlačítko je reset.
 
 <!-- --- -->
 
-### `freq_to_phaseShift` 
+### freq_to_phaseShift
 
 ![Image of simulation of shiftGen](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/shiftGen_tb.png)
 
