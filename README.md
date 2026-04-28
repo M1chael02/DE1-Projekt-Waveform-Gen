@@ -47,9 +47,9 @@ Středové tlačítko je reset.
 ## Moduly
 
 ### Top level
-| Název modulu | Popis funkce |
-|:-----:|-----|
-| `top_level` | Hlavní modul obstarávající spojení mezi zbytkem sub-modulů |
+| Název modulu | Popis funkce | Odkaz na výsledky testů |
+|:-----:|-----| :---: |
+| `top_level` | Hlavní modul obstarávající spojení mezi zbytkem sub-modulů | [Testy](###`freq_to_phaseShift`) |
 
 ### Debounce
 | Název modulu | Popis funkce |
