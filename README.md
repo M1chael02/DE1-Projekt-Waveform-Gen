@@ -55,7 +55,7 @@ Středové tlačítko je reset.
 | Název modulu | Popis funkce |
 |:-----:|-----|
 | `Debounce` | Zajišťuje debouncing vstupních tlačítek |
-| `clock_enable` | Vysíla pulzy po určitém počtu clocků |
+| `clock_enable` | Vysílá pulzy po určitém počtu clocků |
 
 ### Freq to phaseShift
 | Název modulu | Popis funkce |
@@ -78,24 +78,24 @@ Středové tlačítko je reset.
 ### Square top
 | Název modulu | Popis funkce |
 |:-----:|-----|
-| `square_top` | Funguje jako counter který si ze vstupní frekvence a frekvence desky spočítá maximalní počet clocků a v polovině maxima změní hodnotu výstupu |
+| `square_top` | Funguje jako counter, který si ze vstupní frekvence a frekvence desky spočítá maximalní počet clocků a v polovině maxima změní hodnotu výstupu |
 
 ### Sawtooth top
 | Název modulu | Popis funkce |
 |:-----:|-----|
-| `sawtoot_top` | Top level pro generátor pily, funkčnost podobná s `triangle_top` |
+| `sawtooth_top` | Top level pro generátor pily, funkčnost podobná s `triangle_top` |
 | `sawtoothGen` | Podle pozice fázového akumulátoru (32-bit vektor) dá na výstup hodnotu pily v dané pozici |
 | `sigma_Delta` | Sigma-Delta převodník pro pilový průběh |
 
 ### Display controller
 | Název modulu | Popis funkce |
 |:-----:|-----|
-| `display_controller` | Zařizuje funkci displeje |
-| `clock_enable` | Zařizuje obnovovací frekvenci displeje |
+| `display_controller` | Zajišťuje funkčnost displeje |
+| `clock_enable` | Zajišťuje obnovovací frekvenci displeje |
 | `counter_bin` | Čítaním zvyšuje binární číslo, kterým vybírá aktivní anodu |
-| `counter_blink` | Zařizuje blikání měněné číslice při změně frekvence |
-| `biněbcd` | Přepočítává binární číslo na BCD kód |
-| `biněseg` | Zobrazuje jednu binární číslici na 7-segmentovém displeji |
+| `counter_blink` | Zajišťuje blikání měněné číslice při změně frekvence |
+| `bin2bcd` | Přepočítává binární číslo na BCD kód |
+| `bin2seg` | Zobrazuje jednu binární číslici na 7-segmentovém displeji |
 
 <!-- | Název modulu | Popis funkce |
 |:-----:|-----|
@@ -110,6 +110,36 @@ Středové tlačítko je reset.
 
 ## Simulace
 
+<!--### Top level -->
+<!-- Prosím, ještě dopsat freq_select (chápu že se člověk může přehlédnout) -->
+
+<!-- --- -->
+
+### `freq_to_phaseShift` 
+
+![Image of simulation of shiftGen](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/shiftGen_tb.png)
+
+Tento modul úderem každé log. úrovně H vstupu `update_tick` přepočítává vstupní frekvenci (`freq_in`) v Hz na 32-bit fázový posun pro výstup `phaseShift`
+
+---
+
+### `freq_select`
+
+![Image of simulation of freq_select](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/freq_select_tb.png)
+
+<!-- !!!!!!!DOPSAT!!!!!!!!! -->
+---
+
+### `triangle_top`
+
+![Image of simulation of triangle_top](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/triangle_top/tb_top_triangle.png)
+
+Jedná se o top level generátoru trojúhelníkového průběhu. Vstupem jsou clk, rst a phase_step, výstupem pak obdélníkový průběh se střídou, jejíž průměrná hodnota znázorňuje trojúhelníkový průběh
+
+- V simulaci jde vidět vstupní fázový posun `phase_step` a na výstupu `triangle_out` pak výstupní signál s PWM (Pulse-Width Modulation)
+
+---
+
 ### `phase_accumulator` 
 
 ![Image of simulation of phase_accumulator](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/sawtooth_top/phase_accumulator_1.png)
@@ -120,6 +150,14 @@ Modul přičítá každým taktem hodnotu vstupu na výstup. Tím se zajišťuje
 - Výstupem je 32-bit `phase_out`
 
 Je vidět že se každým taktem výstup zvětšuje o vstupní hodnotu
+
+---
+
+### `triangle_gen`
+
+![Image of simulation of triangle_gen](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/triangle_top/tb_triangle_gen_1.png)
+
+Modul generuje na výstupu `triangle` 8-bit číslo znázorňující amplitudu trojúhelníkového signálu v závislosti na poloze 32-bit čísla `phase`znázorňující fázi v daném časovém úseku
 
 ---
 
@@ -134,6 +172,25 @@ Podle vstupní úrovně dává modul na výstup obdélníkový průběh s danou 
 
 ---
 
+### `square_top`
+![image of simulation of square_top](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/square_top/square_top_tb.png)
+
+Modul při `en` 1 vezme frekvenci a přepočítá frekvenci na počet clocků, poté funguje jako `counter` a v polovině maxima překlopí výstupní signál
+
+- V simulaci můžeme pozorovat jak se změní šířka impulzů až poté co se na `en` objeví 1, i přes to že frekvence se změnila už dříve
+
+---
+
+### `sawtooth_top`
+
+![Image of simulation of sawtooth_top](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/sawtooth_top/sawtooth_top_1.png)
+
+Jedná se o top level generátoru pilového průběhu. Vstupem jsou clk, rst a phase_Shift, výstupem pak obdélníkový průběh se střídou, jejíž průměrná hodnota znázorňuje pilový průběh
+
+- V simulaci jde vidět vstupní fázový posun a na výstupu pak výstupní signál sigma-delta převodníku
+
+---
+
 ### `sawtoothGen`
 
 ![Image of simulation of sawtoothGen](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/sawtooth_top/sawtoothGen_1.png)
@@ -142,24 +199,6 @@ Modul přepočítává vstupní 32-bit hodnotu fáze na 8-bit hodnotu pily. Spod
 
 - Horní signál `phase` je současnou hodnotou fáze
 - Spodní signál `sawtooth` je zobrazen analogově a ukazuje pilový průběh
-
----
-
-### `sawtooth_top`
-
-![Image of simulation of sawtoot_top](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/sawtooth_top/sawtooth_top_1.png)
-
-Jedná se o top level generátoru pilového průběhu. Vstupem jsou clk, rst a phase_Shift, výstupem pak obdélníkový průběh se střídou, jejíž průměrná hodnota znázorňuje pilový průběh
-
-- V simulaci jde vidět vstupní fázový posun a na výstupu pak výstupní signál sigma-delta převodníku
-
----
-
-### `shiftGen`
-
-![Image of simulation of shiftGen](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/shiftGen_tb.png)
-
-Tento modul úderem každé log. úrovně H vstupu `update_tick` přepočítává vstupní frekvenci (`freq_in`) v Hz na 32-bit fázový posun pro výstup `phaseShift`
 
 ---
 
@@ -173,32 +212,24 @@ Tento modul využívá koncepce sigma-delta převodníku pro konverzi 8-bit digi
 
 ---
 
-### `triangle_top`
+### `display_controller`
+![image of simulation of display_controller](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/display_controller/display_controller_tb.png)
 
-![Image of simulation of triangle_top](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/triangle_top/tb_top_triangle.png)
+Modul, který zpracovává veškerá data zobrazovaná na displeji
 
-Jedná se o top level generátoru trojúhelníkového průběhu. Vstupem jsou clk, rst a phase_step, výstupem pak obdélníkový průběh se střídou, jejíž průměrná hodnota znázorňuje trojúhelníkový průběh
-
-- V simulaci jde vidět vstupní fázový posun `phase_step` a na výstupu `triangle_out` pak výstupní signál s PWM (Pulse-Width Modulation)
-
----
-
-### `triangle_gen`
-
-![Image of simulation of triangle_gen](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/triangle_top/tb_triangle_gen_1.png)
-
-Modul generuje na výstupu `triangle` 8-bit číslo znázorňující amplitudu trojúhelníkového signálu v závislosti na poloze 32-bit čísla `phase`znázorňující fázi v daném časovém úseku
+- V simulaci můžeme vidět jak se postupně mění aktivní anoda a v případě nepoužívaných anod jsou všechny anody nastaveny na 1
+- Dále jde vidět jak se na výstup `seg` postupně přiřazují jednotlivé číslice vstupní frekvence
 
 ---
 
-### `square_top`
-![image of simulation of square_top](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/square_top/square_top_tb.png)
+<!--### `shiftGen`
 
-Modul při `en` 1 vezme frekvenci a přepočítá frekvenci na počet clocků, poté funguje jako `counter` a v polovině maxima překlopí výstupní signál
+![Image of simulation of shiftGen](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/shiftGen_tb.png)
 
-- V simulaci můžeme pozorovat jak se změní šířka impulzů až poté co se na `en` objeví 1, i přes to že frekvence se změnila už dříve
+Tento modul úderem každé log. úrovně H vstupu `update_tick` přepočítává vstupní frekvenci (`freq_in`) v Hz na 32-bit fázový posun pro výstup `phaseShift`
 
----
+--- -->
+
 
 ### `counter_bin`
 ![image of simulation of counter_bin](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/display_controller/counter_bin_tb.png)
@@ -214,12 +245,4 @@ Při každé náběžné hraně `clock`, pokud je `en` 1, zvýší svoji binárn
 Tvoří obdelníkové pulzy s pevně danou periodou
 
 ---
-### `display_controller`
-![image of simulation of display_controller](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/display_controller/display_controller_tb.png)
 
-Modul, který zpracovává veškerá data zobrazovaná na displeji
-
-- V simulaci můžeme vidět jak se postupně mění aktivní anoda a v případě nepoužívaných anod jsou všechny anody nastaveny na 1
-- Dále jde vidět jak se na výstup `seg` postupně přiřazují jednotlivé číslice vstupní frekvence
-
----
