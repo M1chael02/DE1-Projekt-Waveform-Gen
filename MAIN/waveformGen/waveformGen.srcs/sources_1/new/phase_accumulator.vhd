@@ -1,22 +1,4 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 15.04.2026 23:36:47
--- Design Name: 
--- Module Name: phase_Accumulator - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
+-- created by AI (chatGPT)
 
 
 library ieee;

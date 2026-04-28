@@ -1,22 +1,5 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 15.04.2026 23:45:00
--- Design Name: 
--- Module Name: phase_accumulator_tb - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
+-- partially created by AI (chatGPT)
+
 
 
 library ieee;
@@ -67,13 +50,12 @@ begin
         wait for 50 ns;
         rst <= '0';
 
-        -- zapnutí
 
-        -- test 1: malé phase_step
+        -- test 1: small phase_step
         phase_step <= std_logic_vector(to_unsigned(1000, 32));
         wait for 200 ns;
 
-        -- test 2: větší krok (rychlejší změna)
+        -- test 2: bigger step 
         phase_step <= std_logic_vector(to_unsigned(100000, 32));
         -- konec simulace
         wait;
