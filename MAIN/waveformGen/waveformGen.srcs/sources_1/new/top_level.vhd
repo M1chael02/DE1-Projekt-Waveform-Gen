@@ -56,6 +56,7 @@ architecture Behavioral of top_level is
     Port(
         clk         : in  STD_LOGIC;
         rst         : in  STD_LOGIC;
+        change      : in  STD_LOGIC;
         freq_in     : in  STD_LOGIC_VECTOR(19 downto 0);
         mag         : in  STD_LOGIC_VECTOR(5 downto 0);
         seg         : out STD_LOGIC_VECTOR(6 downto 0);
@@ -162,6 +163,7 @@ begin
     port map(
         clk     => clk,
         rst     => btnc,
+        change  => sw(0),
         freq_in => sig_freq,
         mag     => sig_mag,
         seg     => seg,
