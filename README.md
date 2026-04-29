@@ -11,7 +11,7 @@ Jednoduchý generátor průběhů signálu s využitím vývojové desky Nexys A
 - [I/O sekce](#IO-sekce)
 - [Moduly](#Moduly)
 - [Simulace](#Simulace)
-- [Výstupní filtr](#Vystupni-filtr)
+- [Výstupní filtr](#ystupni-filtr)
 - [Závěr](#Závěr)
 
 ## Základní popis fungování
