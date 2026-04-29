@@ -11,6 +11,7 @@ Jednoduchý generátor průběhů signálu s využitím vývojové desky Nexys A
 - [I/O sekce](#IO-sekce)
 - [Moduly](#Moduly)
 - [Simulace](#Simulace)
+- [Výstupní filtr](#Vystupni-filtr)
 - [Závěr](#Závěr)
 
 ## Základní popis fungování
@@ -274,5 +275,9 @@ Tvoří obdelníkové pulzy s pevně danou periodou
 
 ---
 
+## Výstupní filtr
+![image of an output](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/filter.png)
+
+---
 
 ## Závěr
