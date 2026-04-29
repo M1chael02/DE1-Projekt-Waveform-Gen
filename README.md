@@ -278,6 +278,8 @@ Tvoří obdelníkové pulzy s pevně danou periodou
 ## Výstupní filtr
 ![image of an output](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/filter.png)
 
+Jelikož je výstup z FPGA desky pouze 1-bit, je nutné výstupní "analogovou" hodnotu modulovat buď pomocí šířky pulsů (PWM), nebo pomocí hustoty pulsů (PDM). Aby pak výstupní signál vykazoval požadovaný průběh, je nutné ho filtrovat dolní propustí. Tím se zamezí propuštění vyšších harmonických kmitočtů obdélíkového výstupu.
+
 ---
 
 ## Závěr
