@@ -21,7 +21,7 @@ architecture tb of top_triangle_tb is
 begin
 
     -- DUT
-    uut: entity work.top_triangle
+    uut: entity work.triangle_top
         port map (
             clk        => clk,
             rst        => rst,
