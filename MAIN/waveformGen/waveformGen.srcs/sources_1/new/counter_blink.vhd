@@ -25,7 +25,7 @@ begin
             -- Dissables blinking when frequency isnt changing
             elsif dis = '0' then
                 ce      <= '0';
-                sig_cnt <= 0'
+                sig_cnt <= 0;
 
             -- Returns counter to 0 when it reaches max
             elsif sig_cnt = G_MAX-1 then
