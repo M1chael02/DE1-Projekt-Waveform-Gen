@@ -59,14 +59,15 @@ architecture Behavioral of sawtooth_top is
     end component sawtoothGen;
     
          -- Component declaration for sawtooth generator
-    component sigma_Delta is
-        port(
-            clk         : in  std_logic;
-            rst         : in  std_logic;
-            data_in     : in  std_logic_vector(7 downto 0);
-            dac_out     : out std_logic
+
+    component pwm_gen is
+        port (
+            clk        : in  std_logic; -- System clock
+            rst        : in  std_logic; -- Active-high synchronous reset
+            duty_in    : in  std_logic_vector(7 downto 0); -- Duty cycle input (0-255)
+            pwm_out    : out std_logic -- PWM output signal
         );
-    end component sigma_Delta;  
+    end component pwm_gen;   
     
     signal s_phase  : std_logic_vector(31 downto 0) := (others => '0');
     signal s_saw    : std_logic_vector(7 downto 0)  := (others => '0');
@@ -87,11 +88,12 @@ begin
             sawtooth => s_saw
         );
         
-    sigma_delta_0: sigma_Delta
-        port map (
+        
+    pwm_gen_1 : pwm_gen
+        port map(
             clk => clk,
             rst => rst,
-            data_in => s_saw,
-            dac_out => output_Saw
+            duty_in => s_saw,
+            pwm_out => output_Saw
         );
 end Behavioral;
