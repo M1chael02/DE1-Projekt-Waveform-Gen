@@ -32,7 +32,7 @@ architecture Behavioral of debounce is
     -- Component declaration for clock enable
     ----------------------------------------------------------------
     component clk_en is
-        generic ( G_MAX : positive );
+        generic ( N_PERIODS : positive );
         port (
             clk : in  std_logic;
             rst : in  std_logic;
@@ -45,7 +45,7 @@ begin
     -- Clock enable instance
     ----------------------------------------------------------------
     clock_0 : clk_en
-        generic map ( G_MAX => C_MAX )
+        generic map ( N_PERIODS => C_MAX )
         port map (
             clk => clk,
             rst => rst,
