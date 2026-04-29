@@ -53,10 +53,10 @@ Středové tlačítko je reset.
 | `top_level` | Hlavní modul obstarávající spojení mezi zbytkem sub-modulů |
 
 ### Debounce
-| Název modulu | Popis funkce |
-|:-----:|-----|
-| `Debounce` | Zajišťuje debouncing vstupních tlačítek |
-| `clock_enable` | Vysílá pulzy po určitém počtu clocků |
+| Název modulu | Popis funkce | Odkaz na výsledky testů |
+|:-----:|-----| :---: |
+| `Debounce` | Zajišťuje debouncing vstupních tlačítek | Uděláno na cvičeních |
+| `clock_enable` | Vysílá pulzy po určitém počtu clocků | Uděláno na cvičeních |
 
 ### Freq to phaseShift
 | Název modulu | Popis funkce | Odkaz na výsledky testů |
@@ -92,10 +92,10 @@ Středové tlačítko je reset.
 | Název modulu | Popis funkce | Odkaz na výsledky testů |
 |:-----:|-----| :---: |
 | `display_controller` | Zajišťuje funkčnost displeje | [Testy](#display_controller) |
-| `clock_enable` | Zajišťuje obnovovací frekvenci displeje |
+| `clock_enable` | Zajišťuje obnovovací frekvenci displeje | Uděláno na cvičeních |
 | `counter_bin` | Čítaním zvyšuje binární číslo, kterým vybírá aktivní anodu | [Testy](#counter_bin) |
 | `counter_blink` | Zajišťuje blikání měněné číslice při změně frekvence | [Testy](#counter_blink) |
-| `bin2bcd` | Přepočítává binární číslo na BCD kód |
+| `bin2bcd` | Přepočítává binární číslo na BCD kód | Uděláno na cvičeních |
 | `bin2seg` | Zobrazuje jednu binární číslici na 7-segmentovém displeji |
 
 <!-- | Název modulu | Popis funkce |
