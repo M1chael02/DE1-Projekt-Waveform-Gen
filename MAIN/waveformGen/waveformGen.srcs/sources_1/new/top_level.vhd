@@ -176,7 +176,8 @@ begin
         clk         => clk,
         rst         => btnc,
         update_tick => sig_update,
-        freqIn      => sig_freq_c
+        freqIn      => sig_freq_c,
+        phaseShift  => sig_phase_shift
     );
     
     freq_0 : freq_select

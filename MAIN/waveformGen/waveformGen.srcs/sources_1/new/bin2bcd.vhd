@@ -30,7 +30,7 @@ begin
         shift_reg(19 downto 0) := binary_in;
 
         -- Double Dabble Algorithm
-        for i in 0 to 19 loop
+        for i in 0 to 16 loop
 
             -- Check each BCD digit and add 3 if > 4
             if unsigned(shift_reg(20 downto 17)) > 4 then
