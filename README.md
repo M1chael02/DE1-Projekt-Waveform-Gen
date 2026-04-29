@@ -122,6 +122,8 @@ Středové tlačítko je reset.
 
 Tento modul úderem každé log. úrovně H vstupu `update_tick` přepočítává vstupní frekvenci (`freq_in`) v Hz na 32-bit fázový posun pro výstup `phaseShift`
 
+[Testbench soubor zde](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/MAIN/waveformGen/waveformGen.srcs/sim_1/new/shiftGen_tb.vhd)
+
 ---
 
 ### freq_select
