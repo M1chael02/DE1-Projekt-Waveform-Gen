@@ -96,7 +96,7 @@ Středové tlačítko je reset.
 | `counter_bin` | Čítaním zvyšuje binární číslo, kterým vybírá aktivní anodu | [Testy](#counter_bin) |
 | `counter_blink` | Zajišťuje blikání měněné číslice při změně frekvence | [Testy](#counter_blink) |
 | `bin2bcd` | Přepočítává binární číslo na BCD kód | Uděláno na cvičeních |
-| `bin2seg` | Zobrazuje jednu binární číslici na 7-segmentovém displeji |
+| `bin2seg` | Zobrazuje jednu binární číslici na 7-segmentovém displeji | Uděláno na cvičeních |
 
 <!-- | Název modulu | Popis funkce |
 |:-----:|-----|
