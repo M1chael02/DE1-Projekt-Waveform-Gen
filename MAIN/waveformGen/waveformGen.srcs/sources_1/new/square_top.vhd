@@ -34,7 +34,7 @@ begin
         -- Waits for signal from freq_select that frequency is done changing
         if en = '1' then
             -- Counts max value of counter so that correct frequncy is achieved
-            freq_u <= 100000000/unsigned(freq)/2; -- 100000000 real aplication, 30 for simulation
+            freq_u <= to_unsigned(100000000/to_integer(unsigned(freq))/2, 20); -- 100000000 real aplication, 30 for simulation
         -- Starts orking after max value is counted
         elsif en = '0' then
             -- Works as counter_blink, When internal counter reaches half of maximal count switches output to 1
