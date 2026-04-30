@@ -87,7 +87,7 @@ Středové tlačítko je reset.
 |:-----:|-----| :---: |
 | `sawtooth_top` | Top level pro generátor pily, funkčnost podobná s `triangle_top` | [Testy](#sawtooth_top) |
 | `sawtoothGen` | Podle pozice fázového akumulátoru (32-bit vektor) dá na výstup hodnotu pily v dané pozici | [Testy](#sawtoothGen) |
-| `sigma_Delta` | Sigma-Delta převodník pro pilový průběh | [Testy](#sigma_Delta) |
+| `pwm_gen` | Na vstupu modulu je vektor `duty_in`, který se používá ke generaci střídy na výstupu | [Testy](#pwm_gen) |
 
 ### Display controller
 | Název modulu | Popis funkce | Odkaz na výsledky testů |
@@ -223,7 +223,7 @@ Modul přepočítává vstupní 32-bit hodnotu fáze na 8-bit hodnotu pily. Spod
 
 ---
 
-### sigma_Delta
+<!-- ### sigma_Delta
 
 ![Image of simulation of sigma_Delta](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/sawtooth_top/sigma_delta_1.png)
 
@@ -233,7 +233,7 @@ Tento modul využívá koncepce sigma-delta převodníku pro konverzi 8-bit digi
 
 [Testbench soubor zde](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/MAIN/waveformGen/waveformGen.srcs/sim_1/new/sigma_delta_dac_tb.vhd)
 
----
+--- -->
 
 ### display_controller
 ![image of simulation of display_controller](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/Simulations/display_controller/display_controller_tb.png)
@@ -278,7 +278,7 @@ Tvoří obdelníkové pulzy s pevně danou periodou
 ## Výstupní filtr
 ![image of an output](https://github.com/M1chael02/DE1-Projekt-Waveform-Gen/blob/main/images/filter.png)
 
-Jelikož je výstup z FPGA desky pouze 1-bit, je nutné výstupní "analogovou" hodnotu modulovat buď pomocí šířky pulsů (PWM), nebo pomocí hustoty pulsů (PDM). Aby pak výstupní signál vykazoval požadovaný průběh, je nutné ho filtrovat dolní propustí. Tím se zamezí propuštění vyšších harmonických kmitočtů obdélíkového výstupu.
+Jelikož je výstup z FPGA desky pouze 1-bit, je nutné výstupní "analogovou" hodnotu modulovat pomocí šířky pulsů (PWM). Aby pak výstupní signál vykazoval požadovaný průběh, je nutné ho filtrovat dolní propustí. Tím se zamezí propuštění vyšších harmonických kmitočtů obdélníkového výstupu. Jako filtr byla zvolena dolní propust 4. řádu s mezní frekvencí vypočítanou na 100 kHz. Každý další řád filtru má 10x vyšší vstupní odpor. Díky tomu se RC článek méně zatíží a má požadovanou modulovou frekvenční charakteristiku. Elegantně se tak vyhneme oddělování článků operačním zesilovačem. To je výhodné, jelikož není potřeba řešit externí napájecí zdroje aktivních prvků v obvodu.
 
 ---
 
